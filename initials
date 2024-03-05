@@ -1,0 +1,28 @@
+#1st task
+
+from google.colab import files
+uploaded = files.upload()
+#lets you choose file from local drive
+
+#2nd taskimport pandas as pd 
+import io
+df=pd.read_csv(io.BytesIO(uploaded["practice.csv"]))
+print(df)
+
+#3rd task
+#readme file
+!pip install wget
+!wget https://raw.githubusercontent.com/batool52/firstbuild/main/README.md -O README.md
+import pandas as pd
+df = pd.read_csv("README.md")
+df.head()
+
+#4th task
+import pandas as pd
+from io import BytesIO
+bio = BytesIO()
+with open('practice.csv', 'rb') as f:
+   bio.write(f.read())
+
+# now we have a BytesIO with a CSV
+df = pd.read_csv(bio)
