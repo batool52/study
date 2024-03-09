@@ -1,0 +1,20 @@
+#using pandas to open binary file
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+from tensorflow.keras import layers
+from matplotlib import pyplot as plt
+import csv
+
+# The following lines adjust the granularity of reporting.
+pd.options.display.max_rows = 7
+pd.options.display.float_format = "{:.1f}".format
+# tf.keras.backend.set_floatx('float32')
+
+print("Ran the import statements.")
+csv_data = b'Encoding,Data//nascii,abc//nwindows-1252,abc'
+with open("binary.csv", "r") as f:
+    readcsv = csv.reader(f, delimiter="\t")
+    for i, line in enumerate(readcsv):
+        print('line[{}] = {}'.format(i, line))
+        print(readcsv)
